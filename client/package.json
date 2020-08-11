@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "https://fitzpatrick.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,11 +14,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "source-map-explorer": "^2.4.2",
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start1": "react-scripts start",
+    "start": "npm-run-all --parallel watch:css start:react",
+    "build": "PUBLIC_URL=https://fitzpatrick.io/ npm-run-all build:css build:react",
+    "build:css": "postcss src/tailwind.css -o src/index.css",
+    "build:react": "react-scripts build",
+    "deploy": "echo TODO",
+    "watch:css": "postcss src/tailwind.css -o src/index.css -w",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -28,7 +36,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "edge 18"
     ],
     "development": [
       "last 1 chrome version",
