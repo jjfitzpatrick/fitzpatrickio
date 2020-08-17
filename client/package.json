@@ -1,48 +1,19 @@
 {
-  "name": "client",
+  "name": "with-chakra-ui",
   "version": "0.1.0",
-  "homepage": "https://fitzpatrick.io",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.54",
-    "@types/react": "^16.9.45",
-    "@types/react-dom": "^16.9.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "source-map-explorer": "^2.4.2",
-    "typescript": "^3.7.5"
-  },
   "scripts": {
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start1": "react-scripts start",
-    "start": "npm-run-all --parallel watch:css start:react",
-    "build": "PUBLIC_URL=https://fitzpatrick.io/ npm-run-all build:css build:react",
-    "build:css": "postcss src/tailwind.css -o src/index.css",
-    "build:react": "react-scripts build",
-    "deploy": "echo TODO",
-    "watch:css": "postcss src/tailwind.css -o src/index.css -w",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "edge 18"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@chakra-ui/core": "^0.5.2",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
