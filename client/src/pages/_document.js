@@ -26,6 +26,7 @@ class MyDocument extends Document {
           {/* TODO: Complete google site verification */}
           <meta content="" name="google-site-verification" />
         </Head>
+        
         <body>
           <Main />
           <NextScript />

@@ -1,24 +1,30 @@
-import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core'
+import * as React from 'react'
+import { 
+  ChakraProvider,
+  CSSReset,
+} from '@chakra-ui/core'
 import Head from 'next/head'
 
-import theme from '../theme'
+import Layout from '../container/layout'
+import theme from '../theme/theme'
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
+
   return (
     <>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-
       </Head>
-      <ThemeProvider theme={theme}>
-        <ColorModeProvider value="light">
-          <CSSReset />
+
+      <ChakraProvider theme={theme}>
+        <CSSReset />
+        <Layout>
           <Component {...pageProps} />
-        </ColorModeProvider>
-      </ThemeProvider>
+        </Layout>
+      </ChakraProvider>
     </>
   )
 }
 
-export default MyApp
+export default App
