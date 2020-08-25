@@ -20,9 +20,6 @@ class MyDocument extends Document {
           <meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
 
-          {/* TODO: Complete yandex verification */}
-          <meta content="" name="yandex-verification" />
-
           {/* TODO: Complete google site verification */}
           <meta content="" name="google-site-verification" />
         </Head>
