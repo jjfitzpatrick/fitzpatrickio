@@ -1,0 +1,16 @@
+Hosting:
+  DigitalOcean
+
+Domain:
+  AWS Route 53
+
+Code:
+  nextjs
+  nodejs
+  react
+
+Datebase:
+  MongoDB
+
+Analytics
+  Ackee
