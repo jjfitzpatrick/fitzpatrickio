@@ -33,5 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# color scheme
+# local notes and files
 color-scheme.txt
+blog-post-ideas.txt
