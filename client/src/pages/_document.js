@@ -26,7 +26,7 @@ class MyDocument extends Document {
           <script async src="https://stats.fitzpatrick.io/fitzpatrickiotrack.js"
             data-ackee-server="https://stats.fitzpatrick.io"
             data-ackee-domain-id="c3e561e2-4031-4b67-810f-8b0071afec38"
-            data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }></script>
+            data-ackee-opts="{ 'ignoreLocalhost': true, 'detailed': true }"></script>
         </Head>
         
         <body>
