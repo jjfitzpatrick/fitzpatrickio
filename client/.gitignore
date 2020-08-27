@@ -33,6 +33,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-# local notes and files
-color-scheme.txt
-blog-post-ideas.txt
+# notes and misc files
+/notes/
