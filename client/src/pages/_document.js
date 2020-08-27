@@ -22,10 +22,11 @@ class MyDocument extends Document {
 
           {/* TODO: Complete google site verification */}
           <meta content="" name="google-site-verification" />
-          
+
           <script async src="https://stats.fitzpatrick.io/fitzpatrickiotrack.js"
             data-ackee-server="https://stats.fitzpatrick.io"
-            data-ackee-domain-id="c3e561e2-4031-4b67-810f-8b0071afec38"></script>
+            data-ackee-domain-id="c3e561e2-4031-4b67-810f-8b0071afec38"
+            detailed="true"></script>
         </Head>
         
         <body>
