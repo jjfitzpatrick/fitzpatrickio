@@ -1,8 +1,7 @@
 import React from "react";
 import NextLink from 'next/link'
-import { Box, Heading, Flex, Text, Stack,
-  Switch, IconButton, Button,
-  useColorMode,
+import { Box, Heading, Flex, Text,
+  IconButton, useColorMode,
  } from "@chakra-ui/core";
  import {SunIcon, MoonIcon } from '@chakra-ui/icons'
 
@@ -24,7 +23,6 @@ const Navbar = () => {
   const NavAnchor = () => {
     return (
       <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
-        {/* TODO: revert  */}
         <NextLink href="/about">
           <a>fitzpatrick.io</a>
         </NextLink>
