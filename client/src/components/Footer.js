@@ -1,10 +1,18 @@
-import { Box, Anchor } from 'grommet'
-import { Share, Home } from 'grommet-icons';
-  
+import { Box, Button, Anchor } from 'grommet'
+import { Share, Home, Github, LinkedinOption, Linkedin } from 'grommet-icons';
+
+const Divider = () => {
+  return (
+    <Box width="95%" margin="auto">
+      <hr></hr>
+    </Box>
+  )
+}
+
 const Footer = () => {
   return (
     <>
-      {/* Horizontal divider, width 97% */}
+      <Divider />
       <Box
         align="center"
         as="footer"
@@ -12,28 +20,31 @@ const Footer = () => {
         flex="false"
         gap="medium"
         justify="center"
-        pad="medium"
+        pad="small"
       >
-        <Anchor
+        <Button
           href="https://github.com/jjfitzpatrick"
           label="GitHub"
           target="_blank"
-          icon={<Share />}>
-        </Anchor>
-        <Anchor
+          icon={<Github />}
+          gap="medium">
+        </Button>
+        <Button
           href="https://www.linkedin.com/in/mr-john-fitzpatrick"
           label="LinkedIn"
           target="_blank"
-          icon={<Share />}>
-        </Anchor>
-        <Anchor
+          icon={<LinkedinOption color="plain" />}
+          gap="medium">
+        </Button>
+        <Button
           href="https://fitzpatrick.io"
           label="fitzpatrick.io"
           target="_self"
-          icon={<Home />}>
-        </Anchor>
+          icon={<Home />}
+          gap="medium">
+        </Button>
       </Box>
-      {/* Horizontal divider, width 97% */}
+      <Divider />
     </>
   )
 }
