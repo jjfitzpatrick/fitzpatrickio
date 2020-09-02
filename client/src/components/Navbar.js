@@ -1,11 +1,8 @@
 import React from "react";
 import Link from 'next/link'
-import { Share, Home, Github, LinkedinOption, Linkedin } from 'grommet-icons';
 import { Anchor, Header, Heading, Nav, } from 'grommet';
 
 const Navbar = () => {
-  // const { colorMode, toggleColorMode } = useColorMode()
-
   const LightDarkSwitch = () => {
     // return (
     //   <IconButton
@@ -41,6 +38,7 @@ const Navbar = () => {
       <Header
         background="dark-1"
         pad="medium"
+        margin={{ "bottom": "medium" }}
       >
         <NavAnchor/>
         {/* TODO: Add side responsive sidemenu: 
