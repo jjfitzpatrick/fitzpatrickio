@@ -17,7 +17,6 @@ const Footer = () => {
         align="center"
         as="footer"
         direction="row"
-        flex="false"
         gap="medium"
         justify="center"
         pad="small"

@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
       <Box
         as="main"
         fill="vertical"
-        flex="grow"
         overflow="auto"
         pad={{"top": "small"}}
       >
