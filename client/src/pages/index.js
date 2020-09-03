@@ -1,12 +1,6 @@
-import {
-  Text,
-  Code,
-  Button,
-  Stack,
-} from '@chakra-ui/core'
+import { Text } from 'grommet'
 
 const Index = () => {
-
   return (
     <>
       <Text>
@@ -16,4 +10,5 @@ const Index = () => {
     </>
   )
 }
+
 export default Index
