@@ -1,20 +1,18 @@
-import {
-  Text,Stack, Image,
-} from '@chakra-ui/core'
+import { Box, Image, Text, } from 'grommet';
 
 const Blog = () => {
   return (
     <>
-      <Stack spacing={3} minHeight="80%">
-        <Text fontSize="xl"
-          align="center">
-          <Image src="/static/favicons/android-chrome-192x192.png" 
-            alt="Under construction"
-            justifyContent="center"
-          />
+      <Box
+        align="center"
+      >
+        <Text alignSelf="center">
           Blog - under construction, content being written 🖋
         </Text>
-      </Stack>
+        <Image src="/static/favicons/android-chrome-192x192.png"
+          fit="contain"
+        />
+      </Box>
     </>
   )
 }
