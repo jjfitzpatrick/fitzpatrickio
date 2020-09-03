@@ -1,58 +1,49 @@
-import {
-  Box,
-  Divider,
-  Link,
-  SimpleGrid,
-  Flex,
-} from '@chakra-ui/core'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
-  
+import { Box, Button, Anchor } from 'grommet'
+import { Share, Home, Github, LinkedinOption, Linkedin } from 'grommet-icons';
+
+const Divider = () => {
+  return (
+    <Box width="95%" margin="auto">
+      <hr></hr>
+    </Box>
+  )
+}
+
 const Footer = () => {
   return (
     <>
-    <Flex justifyContent="center">
-      <Divider
-        width="97%"
-        alignItems="center" />
-    </Flex>
-    
-    <Flex
-      justifyContent="center"
-      m={4}
-    >
-      <SimpleGrid columns={3} spacing={10}>
-        <Box>
-          <Link 
-            px={5}
-            href="https://github.com/jjfitzpatrick"
-            title="GitHub"
-            isExternal>
-            GitHub <ExternalLinkIcon />
-          </Link>
-        </Box>
-        <Box>
-          <Link
-            px={5}
-            href="https://www.linkedin.com/in/mr-john-fitzpatrick"
-            title="LinkedIn"
-            isExternal>
-            LinkedIn <ExternalLinkIcon />
-          </Link>
-        </Box>
-        <Box>
-          <Link href="https://fitzpatrick.io"
-            title="fitzpatrick.io">
-            fitzpatrick.io
-          </Link>
-        </Box>
-      </SimpleGrid>
-    </Flex>
-    
-    <Flex justifyContent="center" paddingBottom={2}>
-      <Divider
-        width="97%"
-        alignItems="center" />
-    </Flex>
+      <Divider />
+      <Box
+        align="center"
+        as="footer"
+        direction="row"
+        gap="medium"
+        justify="center"
+        pad="small"
+      >
+        <Button
+          href="https://github.com/jjfitzpatrick"
+          label="GitHub"
+          target="_blank"
+          icon={<Github />}
+          gap="medium">
+        </Button>
+        <Button
+          href="https://www.linkedin.com/in/mr-john-fitzpatrick"
+          label="LinkedIn"
+          target="_blank"
+          icon={<LinkedinOption color="plain" />}
+          gap="medium">
+        </Button>
+        <Button
+          href="https://fitzpatrick.io"
+          label="fitzpatrick.io"
+          target="_self"
+          icon={<Home />}
+          gap="medium">
+        </Button>
+      </Box>
+      <Divider />
     </>
   )
 }

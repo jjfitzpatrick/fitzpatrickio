@@ -6,7 +6,6 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
-
   render() {
     const ackeeOptions =  "{ \"ignoreLocalhost\": true, \"detailed\": true }"
     return (
@@ -22,9 +21,6 @@ class MyDocument extends Document {
           <meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
 
-          {/* TODO: Complete google site verification */}
-          <meta content="" name="google-site-verification" />
-
           <script async src="https://stats.fitzpatrick.io/fitzpatrickiotrack.js"
             data-ackee-server="https://stats.fitzpatrick.io"
             data-ackee-domain-id="c3e561e2-4031-4b67-810f-8b0071afec38"
@@ -32,9 +28,6 @@ class MyDocument extends Document {
         </Head>
         
         <body>
-{/* 
-        data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
-            data-ackee-opts="{ 'ignoreLocalhost': true, 'detailed': true }"></script> */}
           <Main />
           <NextScript />
         </body>

@@ -1,10 +1,3 @@
-import { Box,
-  Image,
-  Flex,
-  Badge,
-  Text,
-} from '@chakra-ui/core'
-  
 const Custom404 = () => {
   return (
     <>
