@@ -7,6 +7,9 @@ const Resume = () => {
       <Box
         align="center"
       >
+        <Text alignSelf="center">
+          Resume - under construction, HTML coming soon! 🤞
+        </Text>
         <Button
           href="files/JohnFitzpatrickResume2020.pdf"
           label="Click to open PDF résumé"
@@ -16,9 +19,6 @@ const Resume = () => {
         <Image src="/static/favicons/android-chrome-192x192.png"
           fit="contain"
         />
-        <Text alignSelf="center">
-          Resume - under construction, HTML coming soon! 🤞
-        </Text>
       </Box>
     </>
   )
