@@ -38,7 +38,6 @@ const Navbar = () => {
       <Header
         background="dark-1"
         pad="medium"
-        margin={{ "bottom": "medium" }}
       >
         <NavAnchor/>
         {/* TODO: Add side responsive sidemenu: 
