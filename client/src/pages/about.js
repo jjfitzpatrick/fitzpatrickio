@@ -3,18 +3,20 @@ import { Box, Heading, Image, Text, } from 'grommet';
 const About = () => {
   function Blurb({ title, paragraphs, ...rest }) {
     return (
-      <Box
-        pad="small"
-        border={{
-          "size": "small"
-        }}
-        borderRadius="5px"
-      >
-        <Heading size="small">{title}</Heading>
-        {paragraphs.map(para => (
-          <Text mt={4}>{para}</Text>
-        ))}
-      </Box>
+      <>
+        <Box
+          pad="small"
+          border={{
+            "size": "small"
+          }}
+          borderRadius="5px"
+        >
+          <Heading size="small">{title}</Heading>
+          {paragraphs.map(para => (
+            <Text key={para}>{para}</Text>
+          ))}
+        </Box>
+      </>
     )
   }
 
