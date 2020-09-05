@@ -15,9 +15,11 @@ const Navbar = () => {
     // )
   }
 
+  
+
   const NavAnchor = () => {
     return (
-      <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
+      <Heading size="lg">
         <Link href="/">
           <Anchor href="/" label="fitzpatrick.io" />
         </Link>
@@ -35,10 +37,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Header
-        background="dark-1"
-        pad="medium"
-      >
+      <Header>
         <NavAnchor/>
         {/* TODO: Add side responsive sidemenu: 
         https://github.com/grommet/grommet-starter-new-app */}

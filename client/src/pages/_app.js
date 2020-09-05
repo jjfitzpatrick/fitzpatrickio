@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Grommet } from 'grommet';
 import Head from 'next/head'
 import Layout from '../container/layout'
+import defaultTheme from '../theme/defaultTheme'
 
 function App({ Component, pageProps }) {
   return (
@@ -10,7 +11,7 @@ function App({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       </Head>
-      <Grommet>
+      <Grommet theme={defaultTheme}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
