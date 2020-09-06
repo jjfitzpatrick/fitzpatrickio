@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "grommet": "^2.15.0",
-    "grommet-icons": "^4.4.0",
+    "grommet-icons": "https://github.com/grommet/grommet-icons/tarball/stable",
     "next": "^9.5.2",
     "polished": "^3.6.6",
     "react": "^16.13.1",
