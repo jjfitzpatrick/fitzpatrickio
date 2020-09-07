@@ -4,19 +4,15 @@ const About = () => {
   const Blurb = ({ title, paragraphs, ...rest }) => {
     return (
       <>
-        <Box
-          pad="small"
-        >
-          <Heading size="small">{title}</Heading>
-          {paragraphs.map(para => (
-            <Text 
-              key={para}
-              margin={{
-                "bottom": "15px"
-              }}
-            >{para}</Text>
-          ))}
-        </Box>
+        <Heading size="small">{title}</Heading>
+        {paragraphs.map(para => (
+          <Text 
+            key={para}
+            margin={{
+              "bottom": "15px"
+            }}
+          >{para}</Text>
+        ))}
       </>
     )
   }
