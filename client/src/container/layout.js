@@ -5,16 +5,21 @@ import Footer from '../components/Footer';
 const Layout = ({ children }) => {  
   return (
     <>
-      <Navbar />
-      <Box
-        as="main"
-        fill="vertical"
-        overflow="auto"
-        pad={{"top": "small"}}
-      >
-        { children }
+      <Box>
+        <Navbar />
+        <Box
+          as="main"
+          fill="vertical"
+          overflow="auto"
+          pad="medium"
+          width="50em"
+          alignSelf="center"
+        >
+          { children }
+        </Box>
+        <Footer />
+
       </Box>
-      <Footer />
     </>
   )
 }
