@@ -19,7 +19,11 @@ const Footer = () => {
         gap="medium"
         justify="center"
         pad="medium"
-        background="light-4"
+        pad={{
+          "top":"xlarge",
+          "left":"medium",
+          "right":"medium",
+          "bottom":"medium"}}
       >
       <Divider />
         <Button
