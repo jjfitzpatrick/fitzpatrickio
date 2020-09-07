@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <Header
-        background="light-2"
+        background="light-4"
         pad={{"left": "xlarge", "right": "xlarge"}}
       >
         <NavAnchor/>
