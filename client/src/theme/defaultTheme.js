@@ -1,5 +1,3 @@
-
-
 const defaultTheme = {
   name: 'my theme',
   rounding: 4,
@@ -29,7 +27,7 @@ const defaultTheme = {
       },
       text: {
         dark: '#EEEEEE',
-        light: '#333333'
+        light: '#495058'
       },
       'text-strong': {
         dark: '#FFFFFF',
@@ -47,6 +45,7 @@ const defaultTheme = {
         dark: '#444444',
         light: '#CCCCCC'
       },
+      'focus': 'none',
       control: 'brand',
       'active-background': 'background-contrast',
       'active-text': 'text-strong',
@@ -73,7 +72,7 @@ const defaultTheme = {
     },
     hover: {
       background: 'active-background',
-      color: 'active-text'
+      color: 'active-text',
     },
     selected: {
       background: 'selected-background',
@@ -156,6 +155,11 @@ const defaultTheme = {
       border: {
         radius: '4px'
       }
+    }
+  },
+  anchor: {
+    hover: {
+      textDecoration: 'none',
     }
   },
   chart: {},
