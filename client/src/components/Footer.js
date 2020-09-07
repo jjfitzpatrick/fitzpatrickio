@@ -12,38 +12,40 @@ const Divider = () => {
 const Footer = () => {
   return (
     <>
-      <Divider />
       <Box
         align="center"
         as="footer"
         direction="row"
         gap="medium"
         justify="center"
-        pad="small"
+        pad="medium"
+        pad={{
+          "top":"xlarge",
+          "left":"medium",
+          "right":"medium",
+          "bottom":"medium"}}
       >
+      <Divider />
         <Button
           href="https://github.com/jjfitzpatrick"
           label="GitHub"
           target="_blank"
-          icon={<Github />}
-          gap="medium">
+          icon={<Github color="white" />}
+          gap="medium"
+          primary="true"
+        >
         </Button>
         <Button
           href="https://www.linkedin.com/in/mr-john-fitzpatrick"
           label="LinkedIn"
           target="_blank"
-          icon={<LinkedinOption color="plain" />}
-          gap="medium">
+          icon={<LinkedinOption color="white" />}
+          gap="medium"
+          primary="true"
+        >
         </Button>
-        <Button
-          href="https://fitzpatrick.io"
-          label="fitzpatrick.io"
-          target="_self"
-          icon={<Home />}
-          gap="medium">
-        </Button>
-      </Box>
       <Divider />
+      </Box>
     </>
   )
 }

@@ -3,21 +3,10 @@ import Link from 'next/link'
 import { Anchor, Header, Heading, Nav, } from 'grommet';
 
 const Navbar = () => {
-  const LightDarkSwitch = () => {
-    // return (
-    //   <IconButton
-    //     aria-label="Toggle dark mode"
-    //     borderColor="none"
-    //     icon={colorMode === 'light' ? <SunIcon/>: <MoonIcon/> }
-    //     variant="unstyled"
-    //     onClick={toggleColorMode}
-    //   />
-    // )
-  }
 
   const NavAnchor = () => {
     return (
-      <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
+      <Heading size="lg">
         <Link href="/">
           <Anchor href="/" label="fitzpatrick.io" />
         </Link>
@@ -28,7 +17,7 @@ const Navbar = () => {
   const Navlink = ({ children, ...props }) => {
     return (
       <Link href={"/" + props.path} passHref>
-        <Anchor href={props.path} label={props.text} />
+        <Anchor href={props.path} label={props.text} target={props.target} />
       </Link>
     )
   }
@@ -36,8 +25,8 @@ const Navbar = () => {
   return (
     <>
       <Header
-        background="dark-1"
-        pad="medium"
+        background="light-4"
+        pad={{"left": "xlarge", "right": "xlarge"}}
       >
         <NavAnchor/>
         {/* TODO: Add side responsive sidemenu: 
@@ -45,7 +34,8 @@ const Navbar = () => {
         <Nav direction="row">
           <Navlink text="About" path="about" />
           <Navlink text="Blog" path="blog" />
-          <Navlink text="Résumé" path="resume" />
+          {/* TODO: Remove direct PDF link once resume page complete */}
+          <Navlink text="Résumé" path="files/JohnFitzpatrickResume2020.pdf" target="_blank"/>
         </Nav>
       </Header>
     </>

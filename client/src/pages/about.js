@@ -1,20 +1,23 @@
-import { Box, Heading, Image, Text, } from 'grommet';
+import { Box, Heading, Text, } from 'grommet';
 
 const About = () => {
-  function Blurb({ title, paragraphs, ...rest }) {
+  const Blurb = ({ title, paragraphs, ...rest }) => {
     return (
-      <Box
-        pad="small"
-        border={{
-          "size": "small"
-        }}
-        borderRadius="5px"
-      >
-        <Heading size="small">{title}</Heading>
-        {paragraphs.map(para => (
-          <Text mt={4}>{para}</Text>
-        ))}
-      </Box>
+      <>
+        <Box
+          pad="small"
+        >
+          <Heading size="small">{title}</Heading>
+          {paragraphs.map(para => (
+            <Text 
+              key={para}
+              margin={{
+                "bottom": "15px"
+              }}
+            >{para}</Text>
+          ))}
+        </Box>
+      </>
     )
   }
 
@@ -22,11 +25,11 @@ const About = () => {
     <>
       <Blurb
         title="About me"
-        paragraphs={['Hello! I\'m John Fitzpatrick, a Software Engineer located in Columbus, Ohio. I created this site to share what I have learned from prior projects, share what I am learning now and refine my writing and writing skills. I have learned a lot on this journey and hope you can find a little nugget of knowledge too.']}
+        paragraphs={['Hello! I\'m John Fitzpatrick, a Software Engineer located in Columbus, Ohio. I created this site to share what I have learned from prior projects and what I am learning now. This will also help refine my technical writing skills and serve as a portfolio. I have learned a lot on this journey and hope you can find a little nugget of knowledge too.']}
       />
       <Blurb
         title='My work'
-        paragraphs={['Professionally I have spent most of my career in the Microsoft world - Azure, C#, ASP.NET, .NET Core and basic JS/HTML/CSS - working with large enterprise clients. Most this work falls in the backend and dev ops worlds.',
+        paragraphs={['Professionally I have spent most of my career in the Microsoft world - Azure, C#, ASP.NET, .NET Core and JS/HTML/CSS - working with small and medium sized businesses as a software engineer and consultant.',
         
         'In my free time I have taken up the task of mastering the frontend works by studying JavaScript via React. I\'ve tossed in Next.js and Node.js to keep things spicy - life is boring without data.']}
       />
@@ -38,6 +41,7 @@ const About = () => {
         
         'My goal with this site is to showcase my projects and accomplishments and to serve as a learning tool for others.']}
       />
+      {/* Add contact form */}
       <Blurb
         title="Say hi!"
         paragraphs={['If you\'d like to chat or share any comments please reach out to me on social media (links in the footer). Personal todo: add contact form.']}
