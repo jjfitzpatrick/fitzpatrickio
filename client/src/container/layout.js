@@ -1,4 +1,4 @@
-import { Box, Heading, Paragraph, } from 'grommet';
+import { Box, } from 'grommet';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer';
 
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
           as="main"
           fill="vertical"
           overflow="auto"
-          pad="medium"
+          pad="small"
           width="50em"
           alignSelf="center"
         >
