@@ -8,10 +8,10 @@ const About = () => {
         {paragraphs.map(para => (
           <Text 
             key={para}
-            margin={{
-              "bottom": "15px"
-            }}
-          >{para}</Text>
+            margin={{ "bottom": "15px" }}
+          >
+            {para}
+          </Text>
         ))}
       </>
     )
