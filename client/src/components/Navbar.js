@@ -17,7 +17,7 @@ const Navbar = () => {
   const Navlink = ({ children, ...props }) => {
     return (
       <Link href={"/" + props.path} passHref>
-        <Anchor href={props.path} label={props.text} />
+        <Anchor href={props.path} label={props.text} target={props.target} />
       </Link>
     )
   }
@@ -34,7 +34,8 @@ const Navbar = () => {
         <Nav direction="row">
           <Navlink text="About" path="about" />
           <Navlink text="Blog" path="blog" />
-          <Navlink text="Résumé" path="resume" />
+          {/* TODO: Remove direct PDF link once resume page complete */}
+          <Navlink text="Résumé" path="files/JohnFitzpatrickResume2020.pdf" target="_blank"/>
         </Nav>
       </Header>
     </>
