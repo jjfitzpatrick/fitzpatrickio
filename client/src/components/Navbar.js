@@ -3,19 +3,6 @@ import Link from 'next/link'
 import { Anchor, Header, Heading, Nav, } from 'grommet';
 
 const Navbar = () => {
-  const LightDarkSwitch = () => {
-    // return (
-    //   <IconButton
-    //     aria-label="Toggle dark mode"
-    //     borderColor="none"
-    //     icon={colorMode === 'light' ? <SunIcon/>: <MoonIcon/> }
-    //     variant="unstyled"
-    //     onClick={toggleColorMode}
-    //   />
-    // )
-  }
-
-  
 
   const NavAnchor = () => {
     return (
@@ -37,7 +24,10 @@ const Navbar = () => {
 
   return (
     <>
-      <Header>
+      <Header
+        background="light-2"
+        pad={{"left": "xlarge", "right": "xlarge"}}
+      >
         <NavAnchor/>
         {/* TODO: Add side responsive sidemenu: 
         https://github.com/grommet/grommet-starter-new-app */}
