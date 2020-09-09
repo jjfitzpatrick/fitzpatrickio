@@ -1,7 +1,7 @@
 import { Box, Heading, Image, Text, Grid, } from 'grommet';
 import { Compass, History, FormClose, HelpOption } from 'grommet-icons'
 import { GetMilestones } from '../data/githubClient'
-import { Stats } from '../components/github/Stats'
+import Stats from '../components/github/Stats'
 
 const Introduction = () => {
   return (
@@ -43,15 +43,7 @@ const TimeCapsuleList = (props) => {
           </Text>
         </Box>
         <Box gridArea="stats" background="light-5" pad="xsmall">
-          <Text color="black" margin={{"bottom": "xsmall"}}>
-            Lines of code changed
-          </Text>
-          <Text color="black" margin={{"bottom": "xsmall"}}>
-            Issues closed     
-          </Text>
-          <Text color="black" margin={{"bottom": "xsmall"}}>
-            Open date - close date
-          </Text>
+          <Stats />
         </Box>
         <Box gridArea="description" background="light-2" pad="xsmall">
           <Box>
