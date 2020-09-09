@@ -32,7 +32,7 @@ const Footer = () => {
           target="_blank"
           icon={<Github color="white" />}
           gap="medium"
-          primary="true"
+          primary
         >
         </Button>
         <Button
@@ -41,7 +41,7 @@ const Footer = () => {
           target="_blank"
           icon={<LinkedinOption color="white" />}
           gap="medium"
-          primary="true"
+          primary
         >
         </Button>
       <Divider />
