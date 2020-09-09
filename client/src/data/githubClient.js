@@ -4,7 +4,7 @@ const owner = 'jjfitzpatrick';
 const repo = 'fitzpatrickio'
 
 const octokit = new Octokit({
-  auth: '',
+  auth: process.env.GITHUB_TOKEN,
 });
 
 const GetIssues = () => {
