@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@octokit/rest": "^18.0.5",
     "grommet": "^2.15.0",
     "grommet-icons": "https://github.com/grommet/grommet-icons/tarball/stable",
     "next": "^9.5.2",
