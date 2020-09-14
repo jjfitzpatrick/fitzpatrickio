@@ -19,29 +19,34 @@ Strikethrough ~~some~~ text
 [link to fitzpatrick.io](https://fitzpatrick.io)
 
 Quote
+
 > Single line
 
 More quotes
+
 > Line one
 > Line two
 > Line three
 
 Unordered list
+
 * Item 1
 * Item 2
   * Item 2a
   * Item 2b
 
 Ordered list
+
 1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+2. Item 2
+3. Item 3
+  4. Item 3a
+  5. Item 3b
 
 Inline code `console.log('hello!')` example
 
 Syntax highlighting
+
 ```javascript
 function onClick(arg) {
   if (arg) {
@@ -50,7 +55,8 @@ function onClick(arg) {
 }
 ```
 
-No syntax highlighting
+### No syntax highlighting
+
 ```
 function onClick(arg) {
   if (arg) {
@@ -60,10 +66,12 @@ function onClick(arg) {
 ```
 
 Task lists
+
 - [ ] Incomplete
-- [X] Complete
+- [x] Complete
 
 Table
+
 | Category 	| Category 	| Category 	| Category 	|
 |----	|----	|----	|----	|
 | a2 	| b2 	| c2 	| d2 	|
@@ -73,8 +81,10 @@ Table
 ### Subcategory
 Sed laoreet nibh a accumsan ornare. Praesent ultricies justo at justo sollicitudin feugiat. Fusce facilisis eget mauris nec fringilla. Sed a quam sit amet nisi pellentesque consectetur. Integer vitae tristique nisl, sed rutrum elit. Suspendisse eleifend neque diam. Aliquam erat volutpat. Duis diam nunc, hendrerit ut augue quis, molestie mattis augue. Cras urna nisl, sollicitudin ac vehicula eu, finibus ac nunc. Praesent eleifend nunc mi. Curabitur a lobortis nibh, sollicitudin blandit justo. Vestibulum ac purus urna. Phasellus at dui iaculis, iaculis odio a, aliquet lectus. Proin id tempus quam. Quisque ornare sit amet turpis id ornare. Nam elit nibh, egestas.
 
-### Quote
-> Cras urna nisl, sollicitudin ac vehicula eu, finibus ac nunc.
+### Long quote
+  > Cras urna nisl, sollicitudin ac vehicula eu, finibus ac nunc. Mauris mauris dui, tincidunt ut sem id, porta sollicitudin mauris. Duis placerat erat a tortor auctor accumsan. Proin ornare lacinia nunc, sit amet eleifend dui mollis eget. Praesent nec leo vestibulum, tristique augue et, auctor nibh. Proin dapibus et nisi in ullamcorper. Suspendisse potenti. Vestibulum tempor mauris mauris, ut finibus turpis tempor et.
+
+
 
 
 
