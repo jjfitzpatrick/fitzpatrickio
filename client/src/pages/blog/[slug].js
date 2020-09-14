@@ -2,7 +2,9 @@ import React from "react"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import { Heading, Markdown } from "grommet"
+// import { Heading, Markdown } from "grommet"
+import { Heading } from "grommet"
+import Markdown from 'markdown-to-jsx';
 
 
 export const Post = ({ title, content, frontmatter }) => {
