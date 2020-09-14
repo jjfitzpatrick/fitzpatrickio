@@ -1,5 +1,5 @@
 ---
-title: test-post-2
+title: Test Post 2
 date: 2-2-2020
 summary: Second, a brief description
 ---

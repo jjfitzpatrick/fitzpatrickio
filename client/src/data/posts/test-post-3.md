@@ -1,5 +1,5 @@
 ---
-title: test-post-3
+title: Test Post 3
 date: 3-3-2020
 summary: Third, a closing line
 ---

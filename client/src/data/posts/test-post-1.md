@@ -1,5 +1,5 @@
 ---
-title: test-post-1
+title: Test Post 1
 date: 1-1-2020
 summary: First, a short summary
 ---
