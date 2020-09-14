@@ -1,6 +1,8 @@
-const { PHASE_DEVELOPMENT_SERVER,
+const {
+  PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_SERVER,
-  PHASE_PRODUCTION_BUILD } = require('next/constants')
+  PHASE_PRODUCTION_BUILD
+} = require('next/constants');
 
 module.exports = (phase, { defaultConfig }) => {
   // if (phase === PHASE_DEVELOPMENT_SERVER) {
@@ -18,14 +20,14 @@ module.exports = (phase, { defaultConfig }) => {
 
   /* config options for all phases except development here */
   return {
-    async redirects() {
+    async redirects () {
       return [
         {
           source: '/',
           destination: '/about',
-          permanent: false,
-        },
-      ]
-    },
-  }
-}
+          permanent: false
+        }
+      ];
+    }
+  };
+};

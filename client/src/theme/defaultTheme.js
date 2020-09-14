@@ -45,7 +45,7 @@ const defaultTheme = {
         dark: '#444444',
         light: '#CCCCCC'
       },
-      'focus': 'none',
+      focus: 'none',
       control: 'brand',
       'active-background': 'background-contrast',
       'active-text': 'text-strong',
@@ -72,7 +72,7 @@ const defaultTheme = {
     },
     hover: {
       background: 'active-background',
-      color: 'active-text',
+      color: 'active-text'
     },
     selected: {
       background: 'selected-background',
@@ -159,7 +159,7 @@ const defaultTheme = {
   },
   anchor: {
     hover: {
-      textDecoration: 'none',
+      textDecoration: 'none'
     }
   },
   chart: {},
@@ -317,7 +317,7 @@ const defaultTheme = {
   },
   heading: {
     level: {
-      '1': {
+      1: {
         small: {
           size: '34px',
           height: '40px',
@@ -339,7 +339,7 @@ const defaultTheme = {
           maxWidth: '2736px'
         }
       },
-      '2': {
+      2: {
         small: {
           size: '30px',
           height: '36px',
@@ -361,7 +361,7 @@ const defaultTheme = {
           maxWidth: '1584px'
         }
       },
-      '3': {
+      3: {
         small: {
           size: '26px',
           height: '32px',
@@ -383,7 +383,7 @@ const defaultTheme = {
           maxWidth: '1200px'
         }
       },
-      '4': {
+      4: {
         small: {
           size: '22px',
           height: '28px',
@@ -405,7 +405,7 @@ const defaultTheme = {
           maxWidth: '816px'
         }
       },
-      '5': {
+      5: {
         small: {
           size: '16px',
           height: '22px',
@@ -427,7 +427,7 @@ const defaultTheme = {
           maxWidth: '384px'
         }
       },
-      '6': {
+      6: {
         small: {
           size: '14px',
           height: '20px',
@@ -516,6 +516,6 @@ const defaultTheme = {
       maxWidth: '816px'
     }
   }
-}
+};
 
-export default defaultTheme
+export default defaultTheme;

@@ -1,22 +1,21 @@
-import { Octokit } from '@octokit/rest'
+import { Octokit } from '@octokit/rest';
 
 const owner = 'jjfitzpatrick';
-const repo = 'fitzpatrickio'
+const repo = 'fitzpatrickio';
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: process.env.GITHUB_TOKEN
 });
 
 const GetIssues = () => {
-  return octokit.issues.list({owner, repo})
-}
+  return octokit.issues.list({ owner, repo });
+};
 
 const GetMilestones = () => {
-  return octokit.issues.listMilestones({ owner, repo })
-}
+  return octokit.issues.listMilestones({ owner, repo });
+};
 
-
-export { GetIssues, GetMilestones }
+export { GetIssues, GetMilestones };
 
 // https://api.github.com
 
