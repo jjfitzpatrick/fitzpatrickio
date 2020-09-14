@@ -11,6 +11,8 @@ Cras rhoncus vestibulum pellentesque. Praesent varius, sem sed euismod congue, n
 
 Aenean laoreet odio non sodales auctor. Donec ut nisl vel arcu mollis sagittis. Pellentesque quis risus pulvinar, vulputate est sit amet, lacinia justo. Duis in ante vitae nisl luctus cursus. Proin quis tempor mi, ut.
 
+### Image
+![Greetings](/static/images/greetings-from-columbus-ohio.jpg)
 
 ### Fenced code
 ```
@@ -22,5 +24,5 @@ Aenean laoreet odio non sodales auctor. Donec ut nisl vel arcu mollis sagittis. 
 ```
 
 ### Task list
-- [x] omplete item
+- [x] complete item
 - [ ] incomplete item
