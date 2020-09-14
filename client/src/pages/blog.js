@@ -35,7 +35,12 @@ const BlogPost = (props) => {
 };
 
 BlogPost.propTypes = {
-  props: PropTypes.object
+  slug: PropTypes.string.isRequired,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string,
+    date: PropTypes.string,
+    summary: PropTypes.string
+  })
 };
 
 export const Blog = ({ posts }) => {
