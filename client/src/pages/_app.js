@@ -1,10 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import { Grommet } from 'grommet';
-import Head from 'next/head'
-import Layout from '../container/layout'
-import defaultTheme from '../theme/defaultTheme'
+import Head from 'next/head';
+import Layout from '../container/layout';
+import defaultTheme from '../theme/defaultTheme';
 
-function App({ Component, pageProps }) {
+function App ({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -23,7 +24,12 @@ function App({ Component, pageProps }) {
         </Layout>
       </Grommet>
     </>
-  )
+  );
 }
 
-export default App
+App.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object
+};
+
+export default App;

@@ -1,63 +1,68 @@
-import React from "react"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
-// import { Heading, Markdown } from "grommet"
-import { Heading } from "grommet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { Heading } from 'grommet';
 import Markdown from 'markdown-to-jsx';
-
 
 export const Post = ({ title, content, frontmatter }) => {
   return (
     <>
-    <Heading>{title}</Heading>
+      <Heading>{title}</Heading>
       <Markdown
         components={{
-          "p": {
-            "component": "Paragraph",
-            "props": {"maxWidth": "inherit"}
+          p: {
+            component: 'Paragraph',
+            props: { maxWidth: 'inherit' }
           }
         }}
       >
         {content}
       </Markdown>
     </>
-  )
-}
+  );
+};
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  frontmatter: PropTypes.object.isRequired
+};
 
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync("src/data/posts")
+  const files = fs.readdirSync('src/data/posts');
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".md", ""),
-    },
-  }))
+      slug: filename.replace('.md', '')
+    }
+  }));
 
   return {
     paths,
-    fallback: false,
-  }
-}
+    fallback: false
+  };
+};
 
 export const getStaticProps = async ({ params: { slug } }) => {
-   const markdownWithMetadata = fs
-    .readFileSync(path.join("src/data/posts", slug + ".md"))
-    .toString()
+  const markdownWithMetadata = fs
+    .readFileSync(path.join('src/data/posts', slug + '.md'))
+    .toString();
 
-  const { data, content } = matter(markdownWithMetadata)
+  const { data, content } = matter(markdownWithMetadata);
 
   const frontmatter = {
-    ...data,
-  }
+    ...data
+  };
 
   return {
     props: {
       title: data.title,
       content: `\n${content}`,
-      frontmatter,
-    },
-  }
-}
+      frontmatter
+    }
+  };
+};
 
-export default Post
+export default Post;

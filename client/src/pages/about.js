@@ -1,21 +1,28 @@
-import { Box, Heading, Text, } from 'grommet';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Heading, Text } from 'grommet';
 
 const About = () => {
-  const Blurb = ({ title, paragraphs, ...rest }) => {
+  const Blurb = ({ title, paragraphs }) => {
     return (
       <>
         <Heading size="small">{title}</Heading>
         {paragraphs.map(para => (
-          <Text 
+          <Text
             key={para}
-            margin={{ "bottom": "15px" }}
+            margin={{ bottom: '15px' }}
           >
             {para}
           </Text>
         ))}
       </>
-    )
-  }
+    );
+  };
+
+  Blurb.propTypes = {
+    title: PropTypes.string.isRequired,
+    paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired
+  };
 
   return (
     <>
@@ -26,16 +33,16 @@ const About = () => {
       <Blurb
         title='My work'
         paragraphs={['Professionally I have spent most of my career in the Microsoft world - Azure, C#, ASP.NET, .NET Core and JS/HTML/CSS - working with small and medium sized businesses as a software engineer and consultant.',
-        
-        'In my free time I have taken up the task of mastering the frontend works by studying JavaScript via React. I\'ve tossed in Next.js and Node.js to keep things spicy - life is boring without data.']}
+
+          'In my free time I have taken up the task of mastering the frontend works by studying JavaScript via React. I\'ve tossed in Next.js and Node.js to keep things spicy - life is boring without data.']}
       />
       <Blurb
         title='This site'
         paragraphs={['I created this site to keep my full stack developer skills sharp. The site is hosted on DigitalOcean and runs on React, Next.js and Node.js.',
-        
-        'The site and server has been built from the group up without any starter kits or templates. The server started as a blank Ubuntu server and the codebase was born from a the simple npx create-next-app - all styles, content, tooling, etc was implemented by hand.',
-        
-        'My goal with this site is to showcase my projects and accomplishments and to serve as a learning tool for others.']}
+
+          'The site and server has been built from the group up without any starter kits or templates. The server started as a blank Ubuntu server and the codebase was born from a the simple npx create-next-app - all styles, content, tooling, etc was implemented by hand.',
+
+          'My goal with this site is to showcase my projects and accomplishments and to serve as a learning tool for others.']}
       />
       {/* Add contact form */}
       <Blurb
@@ -44,7 +51,7 @@ const About = () => {
       />
 
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

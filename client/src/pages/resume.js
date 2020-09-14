@@ -1,5 +1,6 @@
+import React from 'react';
 import { Box, Image, Text, Button } from 'grommet';
-import { Document} from 'grommet-icons'
+import { Document } from 'grommet-icons';
 
 const Resume = () => {
   return (
@@ -21,7 +22,7 @@ const Resume = () => {
         />
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;
