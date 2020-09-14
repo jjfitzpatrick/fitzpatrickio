@@ -1,4 +1,5 @@
-import { Text } from 'grommet'
+import React from 'react';
+import { Text } from 'grommet';
 
 const Index = () => {
   return (
@@ -6,9 +7,8 @@ const Index = () => {
       <Text>
         Hello!
       </Text>
-
     </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
