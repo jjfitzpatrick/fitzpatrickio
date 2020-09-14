@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
     "@octokit/rest": "^18.0.5",

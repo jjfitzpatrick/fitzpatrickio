@@ -21,7 +21,7 @@ const About = () => {
 
   Blurb.propTypes = {
     title: PropTypes.string.isRequired,
-    paragraphs: PropTypes.string.isRequired
+    paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired
   };
 
   return (

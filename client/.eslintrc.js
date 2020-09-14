@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'eslint:recommended',
     'standard'
   ],
   parserOptions: {
@@ -19,5 +20,12 @@ module.exports = {
     'react'
   ],
   rules: {
+    semi: ['error', 'always'],
+    quotes: ['error', 'single']
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
-}
+};

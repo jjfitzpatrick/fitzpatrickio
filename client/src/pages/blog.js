@@ -49,7 +49,7 @@ export const Blog = ({ posts }) => {
 };
 
 Blog.propTypes = {
-  posts: PropTypes.object
+  posts: PropTypes.arrayOf(PropTypes.object)
 };
 
 export const getStaticProps = async () => {

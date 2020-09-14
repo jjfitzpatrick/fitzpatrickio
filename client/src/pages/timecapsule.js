@@ -62,7 +62,7 @@ const TimeCapsuleList = (props) => {
 };
 
 TimeCapsuleList.propTypes = {
-  props: PropTypes.object.isRequired,
+  props: PropTypes.object,
   currentRelease: PropTypes.bool
 };
 
