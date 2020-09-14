@@ -1,21 +1,33 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { Box, Heading, Text, } from 'grommet';
+import { Anchor, Box, Header, Heading, Text, } from 'grommet';
 import Link from 'next/link'
 
 const BlogPost = (props) => {
   return (
     <>
-      <Link href={`/blog/[slug]`} as={`/blog/${props.slug}`}>
-        <Box>
-          <Heading size="xsmall">
-            {props.frontmatter.title}
-          </Heading>
-          <Text>
-            {props.frontmatter.description}
-          </Text>
-        </Box>
-      </Link>
+      <Box
+        margin={{
+          bottom: "medium"
+        }}
+        pad={{
+          "bottom":"15px"
+        }}
+        border={{
+          "side":"bottom"
+        }}
+      >
+        <Header>
+          <Link href={`/blog/[slug]`} as={`/blog/${props.slug}`} passHref>
+            <Anchor color="text" _hover={{ textDecoration: "none" }}>
+              <Heading size="xsmall">{props.frontmatter.title}</Heading>
+            </Anchor>
+          </Link>
+          <Text>{props.frontmatter.date}</Text>
+        </Header>
+          <Text>{props.frontmatter.summary}</Text>
+      </Box>
+      
     </>
   )
 }
