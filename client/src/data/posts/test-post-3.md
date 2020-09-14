@@ -1,7 +1,7 @@
 ---
 title: Test Post 3
 date: 3-3-2020
-summary: Third, a closing line
+summary: An eye popping introduction! Integer sit amet commodo leo, at dignissim diam. Pellentesque sit amet massa eu urna sagittis ornare dapibus quis eros. Fusce euismod lorem lorem, sit amet convallis dui egestas id. In magna justo, efficitur vitae semper sit amet, dignissim vitae justo. Quisque blandit suscipit urna, in sodales ligula sollicitudin nec. Cras et consectetur enim. Praesent at.
 ---
 
 # Introduction
