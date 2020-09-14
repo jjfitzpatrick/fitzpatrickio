@@ -1,7 +1,7 @@
 ---
 title: Test Post 2
 date: 2-2-2020
-summary: Second, a brief description
+summary: A brief but interesting description of the post. Quisque erat urna, sodales id nibh vel, convallis elementum felis. Vestibulum in arcu vitae mauris tincidunt laoreet eu vitae libero. Praesent feugiat vestibulum lectus eu mattis. Pellentesque nulla purus, facilisis nec tincidunt ac, commodo non est. Ut dictum urna ac metus egestas, dapibus faucibus tortor.
 ---
 
 # Announcement
