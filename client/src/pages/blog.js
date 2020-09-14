@@ -1,20 +1,57 @@
-import { Box, Image, Text, } from 'grommet';
+import fs from "fs";
+import matter from "gray-matter";
+import { Box, Heading, Text, } from 'grommet';
+import Link from 'next/link'
 
-const Blog = () => {
+const BlogPost = (props) => {
   return (
     <>
-      <Box
-        align="center"
-      >
-        <Text alignSelf="center">
-          Blog - under construction, content being written 🖋
-        </Text>
-        <Image src="/static/favicons/android-chrome-192x192.png"
-          fit="contain"
-        />
-      </Box>
+      <Link href={`/blog/[slug]`} as={`/blog/${props.slug}`}>
+        <Box>
+          <Heading size="xsmall">
+            {props.frontmatter.title}
+          </Heading>
+          <Text>
+            {props.frontmatter.description}
+          </Text>
+        </Box>
+      </Link>
     </>
   )
+}
+
+export const Blog = ({ posts }) => {
+  return (
+    <>
+    {posts.map(({ frontmatter, slug }) => (
+      <BlogPost key={slug} slug={slug} frontmatter={frontmatter}  />
+      ))}
+    </>
+  )
+}
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(`${process.cwd()}/src/data/posts`);
+
+  const posts = files.map((filename) => {
+    const markdownWithMetadata = fs
+      .readFileSync(`src/data/posts/${filename}`)
+      .toString();
+
+    const { data } = matter(markdownWithMetadata);
+
+    const frontmatter = { ...data };
+
+    return {
+      slug: filename.replace(".md", ""),
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
 
 export default Blog
