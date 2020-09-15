@@ -1,0 +1,12 @@
+.next/
+.vscode/
+node_modules
+notes/
+public/
+*.min.js
+coverage/
+dist/
+es/
+*.bundle.js
+package.json
+*.html
