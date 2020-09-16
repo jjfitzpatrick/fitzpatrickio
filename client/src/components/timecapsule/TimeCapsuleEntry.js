@@ -2,9 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Text, Grid } from 'grommet';
 
-const TimeCapsuleEntry = ({ currentRelease, milestone }) => {
-  // const shit = new Octokit.IssuesListMilestonesResponseData(fuck);
+const ConvertDate = (isoString) => {
+  return new Date(isoString).toLocaleDateString('en-US');
+};
 
+const currentRelease = (openIssues, closedIssues) => {
+  if (openIssues === 0 && closedIssues > 0) return true;
+  if (closedIssues === 0) return false;
+  if (openIssues > 0) return false;
+
+  return true;
+};
+
+const TimeCapsuleEntry = ({ milestone }) => {
   return (
     <>
       <Grid
@@ -29,21 +39,27 @@ const TimeCapsuleEntry = ({ currentRelease, milestone }) => {
           <Text textAlign="start" color="light-1" size="xlarge" weight="bold">
             {milestone.title}
           </Text>
-          <Text textAlign="end">{currentRelease ? 'Current release' : ''}</Text>
+          <Text textAlign="end">
+            {currentRelease(milestone.open_issues, milestone.closed_issues)
+              ? 'Current release'
+              : ''}
+          </Text>
         </Box>
         <Box gridArea="stats" background="light-5" pad="xsmall">
           <Box>
             <Text margin={{ bottom: 'xsmall' }}>
-              Lines modified:
-              <br />
-              <Text color="green">+1</Text>
-              <Text color="red"> -2</Text>
+              Issues closed:{' '}
+              <Text color="green">{milestone.closed_issues}</Text>
             </Text>
             <Text margin={{ bottom: 'xsmall' }}>
-              Issues closed: <Text color="green"> 8</Text>
+              Issues remaining: <Text color="red">{milestone.open_issues}</Text>
             </Text>
-            <Text margin={{ bottom: 'xsmall' }}>Open date: 7/4/20</Text>
-            <Text margin={{ bottom: 'xsmall' }}>Close date: 8/27/20</Text>
+            <Text margin={{ bottom: 'xsmall' }}>
+              Opened: {ConvertDate(milestone.created_at)}
+            </Text>
+            <Text margin={{ bottom: 'xsmall' }}>
+              Closed: {ConvertDate(milestone.closed_at)}
+            </Text>
           </Box>
         </Box>
         <Box gridArea="description" background="light-2" pad="xsmall">
