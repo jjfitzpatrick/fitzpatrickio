@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading, Text } from 'grommet';
-import { CompareCommits, GetMilestones } from '../data/githubClient';
+import { GetMilestones } from '../data/githubClient';
 import TimeCapsuleEntry from '../components/timecapsule/TimeCapsuleEntry';
-
-import { IssuesListMilestonesResponseData } from '@octokit/types';
 
 const Introduction = () => {
   return (
@@ -38,6 +36,7 @@ const Introduction = () => {
 const TimeCapsule = ({ milestones }) => {
   return (
     <>
+      <Introduction />
       {milestones.data
         .sort((x, y) => {
           return x.title.localeCompare(y.title);
@@ -45,7 +44,6 @@ const TimeCapsule = ({ milestones }) => {
         .map((x) => (
           <TimeCapsuleEntry key={x.id} currentRelease={true} milestone={x} />
         ))}
-      {/* <Introduction /> */}
       {/* TODO: Map props.milestones.data 
           to TimeCapsultEntry */}
       {/* Order:
@@ -57,17 +55,16 @@ const TimeCapsule = ({ milestones }) => {
 };
 
 TimeCapsule.propTypes = {
-  props: PropTypes.objectOf(GetMilestones()),
-  currentRelease: PropTypes.bool,
+  milestones: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.any),
+  }),
 };
 
 export const getStaticProps = async () => {
   const milestones = await GetMilestones();
-  const commits = await CompareCommits();
   // console.log(milestones);
-  console.log(commits);
   return {
-    props: { milestones, commits },
+    props: { milestones },
   };
 };
 

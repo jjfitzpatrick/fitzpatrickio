@@ -17,8 +17,4 @@ const GetMilestones = () => {
   return octokit.issues.listMilestones({ owner, repo, state });
 };
 
-const CompareCommits = (base, head) => {
-  return octokit.repos.compareCommits({ owner, repo, base, head });
-};
-
-export { CompareCommits, GetIssues, GetMilestones };
+export { GetIssues, GetMilestones };
