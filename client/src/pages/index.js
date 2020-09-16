@@ -1,19 +1,14 @@
-import {
-  Text,
-  Code,
-  Button,
-  Stack,
-} from '@chakra-ui/core'
+import React from 'react';
+import { Text } from 'grommet';
 
 const Index = () => {
-
   return (
     <>
       <Text>
         Hello!
       </Text>
-
     </>
-  )
-}
-export default Index
+  );
+};
+
+export default Index;

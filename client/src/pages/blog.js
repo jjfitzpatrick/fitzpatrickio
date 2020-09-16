@@ -1,22 +1,85 @@
-import {
-  Text,Stack, Image,
-} from '@chakra-ui/core'
+import React from 'react';
+import PropTypes from 'prop-types';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { Anchor, Box, Header, Heading, Text } from 'grommet';
+import Link from 'next/link';
 
-const Blog = () => {
+const BlogPost = (props) => {
   return (
     <>
-      <Stack spacing={3} minHeight="80%">
-        <Text fontSize="xl"
-          align="center">
-          <Image src="/static/favicons/android-chrome-192x192.png" 
-            alt="Under construction"
-            justifyContent="center"
-          />
-          Blog - under construction, content being written 🖋
-        </Text>
-      </Stack>
-    </>
-  )
-}
+      <Box
+        margin={{
+          bottom: 'medium'
+        }}
+        pad={{
+          bottom: '15px'
+        }}
+        border={{
+          side: 'bottom'
+        }}
+      >
+        <Header>
+          <Link href={'/blog/[slug]'} as={`/blog/${props.slug}`} passHref>
+            <Anchor color="text" _hover={{ textDecoration: 'none' }}>
+              <Heading size="xsmall">{props.frontmatter.title}</Heading>
+            </Anchor>
+          </Link>
+          <Text>{props.frontmatter.date}</Text>
+        </Header>
+        <Text>{props.frontmatter.summary}</Text>
+      </Box>
 
-export default Blog
+    </>
+  );
+};
+
+BlogPost.propTypes = {
+  slug: PropTypes.string.isRequired,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string,
+    date: PropTypes.string,
+    summary: PropTypes.string
+  })
+};
+
+export const Blog = ({ posts }) => {
+  return (
+    <>
+      {posts.map(({ frontmatter, slug }) => (
+        <BlogPost key={slug} slug={slug} frontmatter={frontmatter} />
+      ))}
+    </>
+  );
+};
+
+Blog.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object)
+};
+
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(`${process.cwd()}/src/data/posts`);
+
+  const posts = files.map((filename) => {
+    const markdownWithMetadata = fs
+      .readFileSync(`src/data/posts/${filename}`)
+      .toString();
+
+    const { data } = matter(markdownWithMetadata);
+
+    const frontmatter = { ...data };
+
+    return {
+      slug: filename.replace('.md', ''),
+      frontmatter
+    };
+  });
+
+  return {
+    props: {
+      posts
+    }
+  };
+};
+
+export default Blog;

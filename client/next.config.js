@@ -1,7 +1,3 @@
-const { PHASE_DEVELOPMENT_SERVER,
-  PHASE_PRODUCTION_SERVER,
-  PHASE_PRODUCTION_BUILD } = require('next/constants')
-
 module.exports = (phase, { defaultConfig }) => {
   // if (phase === PHASE_DEVELOPMENT_SERVER) {
   //   /* development only config options here */
@@ -25,7 +21,7 @@ module.exports = (phase, { defaultConfig }) => {
           destination: '/about',
           permanent: false,
         },
-      ]
+      ];
     },
-  }
-}
+  };
+};

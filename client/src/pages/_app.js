@@ -1,30 +1,35 @@
-import * as React from 'react'
-import { 
-  ChakraProvider,
-  CSSReset,
-} from '@chakra-ui/core'
-import Head from 'next/head'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Grommet } from 'grommet';
+import Head from 'next/head';
+import Layout from '../container/layout';
+import defaultTheme from '../theme/defaultTheme';
 
-import Layout from '../container/layout'
-import theme from '../theme/theme'
-
-function App({ Component, pageProps }) {
-
+function App ({ Component, pageProps }) {
   return (
     <>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-      </Head>
 
-      <ChakraProvider theme={theme}>
-        <CSSReset />
+        <style>{`
+          body {
+            margin: 0;
+          }
+        `}</style>
+      </Head>
+      <Grommet theme={defaultTheme}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </ChakraProvider>
+      </Grommet>
     </>
-  )
+  );
 }
 
-export default App
+App.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object
+};
+
+export default App;

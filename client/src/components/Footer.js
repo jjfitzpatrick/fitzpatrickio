@@ -1,60 +1,49 @@
-import {
-  Box,
-  Divider,
-  Link,
-  SimpleGrid,
-  Flex,
-} from '@chakra-ui/core'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
-  
+import React from 'react';
+import { Box, Button } from 'grommet';
+import { Github, LinkedinOption } from 'grommet-icons';
+
+const Divider = () => {
+  return (
+    <Box width="95%" margin="auto">
+      <hr></hr>
+    </Box>
+  );
+};
+
 const Footer = () => {
   return (
     <>
-    <Flex justifyContent="center">
-      <Divider
-        width="97%"
-        alignItems="center" />
-    </Flex>
-    
-    <Flex
-      justifyContent="center"
-      m={4}
-    >
-      <SimpleGrid columns={3} spacing={10}>
-        <Box>
-          <Link 
-            px={5}
-            href="https://github.com/jjfitzpatrick"
-            title="GitHub"
-            isExternal>
-            GitHub <ExternalLinkIcon />
-          </Link>
-        </Box>
-        <Box>
-          <Link
-            px={5}
-            href="https://www.linkedin.com/in/mr-john-fitzpatrick"
-            title="LinkedIn"
-            isExternal>
-            LinkedIn <ExternalLinkIcon />
-          </Link>
-        </Box>
-        <Box>
-          <Link href="https://fitzpatrick.io"
-            title="fitzpatrick.io">
-            fitzpatrick.io
-          </Link>
-        </Box>
-      </SimpleGrid>
-    </Flex>
-    
-    <Flex justifyContent="center" paddingBottom={2}>
-      <Divider
-        width="97%"
-        alignItems="center" />
-    </Flex>
+      <Box
+        align="center"
+        as="footer"
+        direction="row"
+        gap="medium"
+        justify="center"
+        pad="medium"
+      >
+        <Divider />
+        <Button
+          href="https://github.com/jjfitzpatrick"
+          label="GitHub"
+          target="_blank"
+          icon={<Github color="white" />}
+          gap="medium"
+          primary
+        >
+        </Button>
+        <Button
+          href="https://www.linkedin.com/in/mr-john-fitzpatrick"
+          label="LinkedIn"
+          target="_blank"
+          icon={<LinkedinOption color="white" />}
+          gap="medium"
+          primary
+        >
+        </Button>
+        <Divider />
+      </Box>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

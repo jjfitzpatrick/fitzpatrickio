@@ -1,49 +1,33 @@
-import { Box,
-  Container,
-  Flex,
-  useColorMode
-} from '@chakra-ui/core'
-
-import Navbar from '../components/Navbar'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box } from 'grommet';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Layout = ({ children }) => {
-  const { colorMode } = useColorMode();
-
-  const bgColor = {
-    light: '#FFF3B0',
-    dark: 'gray.800'
-  };
-
-  const primarytextColor = {
-    light: 'black',
-    dark: 'gray.50'
-  };
-  
   return (
     <>
-      <Box minHeight="100vh"
-        bg={bgColor[colorMode]}
-        color={primarytextColor[colorMode]}
-      >
+      <Box>
         <Navbar />
-        <Flex
+        <Box
           as="main"
-          flexDirection="column"
-          px={6}
-          justifyContent="space-between"
-          alignItems="center"
-          width="100%"
-          pb="1rem"
-        >        
-          <Container>
-            {children}
-          </Container>
-        </Flex>
+          fill="vertical"
+          overflow="auto"
+          pad="small"
+          width="50em"
+          alignSelf="center"
+        >
+          { children }
+        </Box>
         <Footer />
+
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.object
+};
+
+export default Layout;
