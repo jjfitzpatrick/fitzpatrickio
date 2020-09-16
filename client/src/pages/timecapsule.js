@@ -1,89 +1,95 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Text, Grid } from 'grommet';
-import { GetMilestones } from '../data/githubClient';
-import Stats from '../components/github/Stats';
+import { Heading, Text } from 'grommet';
+import { CompareCommits, GetMilestones } from '../data/githubClient';
+import TimeCapsuleEntry from '../components/timecapsule/TimeCapsuleEntry';
+
+import { IssuesListMilestonesResponseData } from '@octokit/types';
 
 const Introduction = () => {
   return (
     <>
-      <Heading size="small">
-        Time Capsule
-      </Heading>
+      <Heading size="small">Time Capsule</Heading>
       <Text margin={{ bottom: '15px' }}>
-        A time capsule is a historic cache of information or goods that is intended to be opened at a specific date. With this page, I take a new spin on the classic time capsule by providing a view into the previous version of this site.
+        A time capsule is a historic cache of information or goods that is
+        intended to be opened at a specific date. With this page, I take a new
+        spin on the classic time capsule by providing a view into the previous
+        version of this site.
       </Text>
       <Text margin={{ bottom: '15px' }}>
-        The work associated for this project can be found on the issue tracker over at GitHub. Releases are organized by milestones. I chose to name each milestone after a weather event, sorted alphabetically. Each previous version can be found on this page or at *.fitzpatrick.io where * is the milestone name.
+        The work associated for this project can be found on the issue tracker
+        over at GitHub. Releases are organized by milestones. I chose to name
+        each milestone after a weather event, sorted alphabetically. Each
+        previous version can be found on this page or at *.fitzpatrick.io where
+        * is the milestone name.
       </Text>
       <Text margin={{ bottom: '15px' }}>
-        Creating this service is a work in progress. The current solution involves a DigitalOcean droplet running nginx that acts as a reverse proxy to individual NextJS servers each serving a static, prerendered React app. This will eventually need to be revised in the future due to resource limitations and risk of failure in the event of a server restart. But for now, it works!
+        Creating this service is a work in progress. The current solution
+        involves a DigitalOcean droplet running nginx that acts as a reverse
+        proxy to individual NextJS servers each serving a static, prerendered
+        React app. This will eventually need to be revised in the future due to
+        resource limitations and risk of failure in the event of a server
+        restart. But for now, it works!
       </Text>
     </>
   );
 };
 
-const TimeCapsuleList = (props) => {
+const TimeCapsule = ({ milestones }) => {
   return (
     <>
-      <Grid
-        rows={['auto', 'auto']}
-        columns={['small', 'auto']}
-        gap="xsmall"
-        areas={[
-          { name: 'branch', start: [0, 0], end: [1, 0] },
-          { name: 'stats', start: [0, 1], end: [0, 1] },
-          { name: 'description', start: [1, 1], end: [1, 1] }
-        ]}
-        pad={{ bottom: 'large' }}
-      >
-        <Box gridArea="branch" background="brand" pad="xsmall">
-          <Text color="light-1" size="xlarge" weight="bold">
-          Branch {props.currentRelease ? ' - current release' : ''}
-          </Text>
-        </Box>
-        <Box gridArea="stats" background="light-5" pad="xsmall">
-          <Stats />
-        </Box>
-        <Box gridArea="description" background="light-2" pad="xsmall">
-          <Box>
-            <Text>View previous site</Text>
-          </Box>
-          <br></br>
-          <Text color="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat ullamcorper dolor, nec interdum mi lacinia quis. Etiam eu condimentum lorem. Donec et sollicitudin risus.
-            <br></br>
-            <br></br>Duis efficitur purus eu justo fermentum semper. Suspendisse molestie tincidunt nunc, non blandit ante accumsan at. Vestibulum ullamcorper nisi ac lorem malesuada mollis. In efficitur dolor ut ligula imperdiet, eget semper ante pretium. Vestibulum posuere mauris at eros suscipit lacinia. Donec et pulvinar mi. Sed sed ligula est. Etiam iaculis metus quis porttitor posuere. Quisque eu felis sapien.
-          </Text>
-        </Box>
-      </Grid>
+      {milestones.data
+        .sort((x, y) => {
+          return x.title.localeCompare(y.title);
+        })
+        .map((x) => (
+          <TimeCapsuleEntry key={x.id} currentRelease={true} milestone={x} />
+        ))}
+      {/* <Introduction /> */}
+      {/* TODO: Map props.milestones.data 
+          to TimeCapsultEntry */}
+      {/* Order:
+          1. current release
+          2. prev releases
+          3. future releases */}
     </>
-
   );
 };
 
-TimeCapsuleList.propTypes = {
-  props: PropTypes.object,
-  currentRelease: PropTypes.bool
-};
-
-const TimeCapsule = () => {
-  return (
-    <>
-      <Introduction />
-      <TimeCapsuleList currentRelease={true}/>
-      <TimeCapsuleList />
-      <TimeCapsuleList />
-      <TimeCapsuleList />
-    </>
-  );
+TimeCapsule.propTypes = {
+  props: PropTypes.objectOf(GetMilestones()),
+  currentRelease: PropTypes.bool,
 };
 
 export const getStaticProps = async () => {
   const milestones = await GetMilestones();
-  console.log(milestones);
+  const commits = await CompareCommits();
+  // console.log(milestones);
+  console.log(commits);
   return {
-    props: { milestones }
+    props: { milestones, commits },
   };
 };
 
 export default TimeCapsule;
+//
+// GetMilestones
+//
+// "url":"https://api.github.com/repos/jjfitzpatrick/fitzpatrickio/milestones/2",
+// "html_url":"https://github.com/jjfitzpatrick/fitzpatrickio/milestone/2",
+// "labels_url":"https://api.github.com/repos/jjfitzpatrick/fitzpatrickio/milestones/2/labels",
+// "id":5812567,
+// "node_id":"MDk6TWlsZXN0b25lNTgxMjU2Nw==",
+// "number":2,
+// "title":"Blizzard",
+// "description":"CMS, clean up, timeline",
+// "creator":[
+//   "Object"
+// ],
+// "open_issues":4,
+// "closed_issues":16,
+// "state":"open",
+// "created_at":"2020-08-26T15:45:28Z",
+// "updated_at":"2020-09-15T03:18:09Z",
+// "due_on":null,
+// "closed_at":null
