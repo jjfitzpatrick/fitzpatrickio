@@ -4,7 +4,7 @@ const owner = 'jjfitzpatrick';
 const repo = 'fitzpatrickio';
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN
+  auth: process.env.GITHUB_TOKEN,
 });
 
 const GetIssues = () => {
@@ -12,13 +12,9 @@ const GetIssues = () => {
 };
 
 const GetMilestones = () => {
-  return octokit.issues.listMilestones({ owner, repo });
+  const state = 'all';
+
+  return octokit.issues.listMilestones({ owner, repo, state });
 };
 
 export { GetIssues, GetMilestones };
-
-// https://api.github.com
-
-// Accept: application/vnd.github.v3+json
-
-// All timestamps return in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ
