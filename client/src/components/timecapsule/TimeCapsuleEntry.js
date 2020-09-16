@@ -6,7 +6,7 @@ const ConvertDate = (isoString) => {
   return new Date(isoString).toLocaleDateString('en-US');
 };
 
-const currentRelease = (openIssues, closedIssues) => {
+const isReleased = (openIssues, closedIssues) => {
   if (openIssues === 0 && closedIssues > 0) return true;
   if (closedIssues === 0) return false;
   if (openIssues > 0) return false;
@@ -40,8 +40,8 @@ const TimeCapsuleEntry = ({ milestone }) => {
             {milestone.title}
           </Text>
           <Text textAlign="end">
-            {currentRelease(milestone.open_issues, milestone.closed_issues)
-              ? 'Current release'
+            {isReleased(milestone.open_issues, milestone.closed_issues)
+              ? 'Released'
               : ''}
           </Text>
         </Box>
@@ -63,15 +63,8 @@ const TimeCapsuleEntry = ({ milestone }) => {
           </Box>
         </Box>
         <Box gridArea="description" background="light-2" pad="xsmall">
-          <Box>
-            <Text>View previous site</Text>
-          </Box>
-          <br></br>
-          <Text color="black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            consequat ullamcorper dolor, nec interdum mi lacinia quis. Etiam eu
-            condimentum lorem. Donec et sollicitudin risus.
-          </Text>
+          {/* TODO: Link to previous release at /timecapsule/release-name (e.g. aurora, blizzard, etc) */}
+          <Text color="black">{milestone.description}</Text>
         </Box>
       </Grid>
     </>

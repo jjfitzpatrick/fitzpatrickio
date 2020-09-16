@@ -37,19 +37,17 @@ const TimeCapsule = ({ milestones }) => {
   return (
     <>
       <Introduction />
+      {/* TODO order:
+          1. current release
+          2. prev releases
+          3. future releases */}
       {milestones.data
         .sort((x, y) => {
           return x.title.localeCompare(y.title);
         })
         .map((x) => (
-          <TimeCapsuleEntry key={x.id} currentRelease={true} milestone={x} />
+          <TimeCapsuleEntry key={x.id} milestone={x} />
         ))}
-      {/* TODO: Map props.milestones.data 
-          to TimeCapsultEntry */}
-      {/* Order:
-          1. current release
-          2. prev releases
-          3. future releases */}
     </>
   );
 };
@@ -62,13 +60,13 @@ TimeCapsule.propTypes = {
 
 export const getStaticProps = async () => {
   const milestones = await GetMilestones();
-  // console.log(milestones);
   return {
     props: { milestones },
   };
 };
 
 export default TimeCapsule;
+
 //
 // GetMilestones
 //
