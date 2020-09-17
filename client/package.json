@@ -9,7 +9,7 @@
     "format": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
-    "@octokit/rest": "^18.0.5",
+    "@octokit/rest": "^18.0.6",
     "gray-matter": "^4.0.2",
     "grommet": "^2.15.0",
     "grommet-icons": "^4.4.0",
