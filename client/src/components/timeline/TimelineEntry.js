@@ -14,7 +14,7 @@ const isReleased = (openIssues, closedIssues) => {
   return true;
 };
 
-const TimeCapsuleEntry = ({ milestone }) => {
+const TimelineEntry = ({ milestone }) => {
   return (
     <>
       <Grid
@@ -63,17 +63,18 @@ const TimeCapsuleEntry = ({ milestone }) => {
           </Box>
         </Box>
         <Box gridArea="description" background="light-2" pad="xsmall">
-          {/* TODO: Link to previous release at /timecapsule/release-name (e.g. aurora, blizzard, etc) */}
-          <Text color="black">{milestone.description}</Text>
+          {milestone.description.split('\r\n').map((item, key) =>
+             <Text color="black" key={key}>{item}<br/></Text>
+          )}
         </Box>
       </Grid>
     </>
   );
 };
 
-TimeCapsuleEntry.propTypes = {
+TimelineEntry.propTypes = {
   milestone: PropTypes.object,
   currentRelease: PropTypes.bool,
 };
 
-export default TimeCapsuleEntry;
+export default TimelineEntry;
