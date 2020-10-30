@@ -2,57 +2,48 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading, Text } from 'grommet';
 import { GetMilestones } from '../data/githubClient';
-import TimeCapsuleEntry from '../components/timecapsule/TimeCapsuleEntry';
+import TimelineEntry from '../components/timeline/TimelineEntry';
 
 const Introduction = () => {
   return (
     <>
-      <Heading size="small">Time Capsule</Heading>
+      <Heading size="small">Timeline</Heading>
       <Text margin={{ bottom: '15px' }}>
-        A time capsule is a historic cache of information or goods that is
-        intended to be opened at a specific date. With this page, I take a new
-        spin on the classic time capsule by providing a view into the previous
-        version of this site.
+        A timeline is a brief, information dense, ordered list of events. This page 
+        aims to provide a timeline of the releases made for this site with various 
+        stats and release notes attached.
       </Text>
       <Text margin={{ bottom: '15px' }}>
-        The work associated for this project can be found on the issue tracker
-        over at GitHub. Releases are organized by milestones. I chose to name
-        each milestone after a weather event, sorted alphabetically. Each
-        previous version can be found on this page or at *.fitzpatrick.io where
-        * is the milestone name.
+        The work associated for this project can be found on 
+        the <a href="https://github.com/jjfitzpatrick/fitzpatrickio/issues?q=is%3Aissue">issue tracker</a>.  
+        The code is available at <a href="https://github.com/jjfitzpatrick/fitzpatrickio">this GitHub repository</a>. 
+        Releases are organized by milestones. I chose to name each milestone after a unique 
+        weather event, sorted alphabetically.
       </Text>
       <Text margin={{ bottom: '15px' }}>
-        Creating this service is a work in progress. The current solution
-        involves a DigitalOcean droplet running nginx that acts as a reverse
-        proxy to individual NextJS servers each serving a static, prerendered
-        React app. This will eventually need to be revised in the future due to
-        resource limitations and risk of failure in the event of a server
-        restart. But for now, it works!
+        A future feature of this page will allow visitors to view previous releases 
+        of the site to see how it has evolved and improved over time!
       </Text>
     </>
   );
 };
 
-const TimeCapsule = ({ milestones }) => {
+const Timeline = ({ milestones }) => {
   return (
     <>
       <Introduction />
-      {/* TODO order:
-          1. current release
-          2. prev releases
-          3. future releases */}
       {milestones.data
         .sort((x, y) => {
           return x.title.localeCompare(y.title);
         })
         .map((x) => (
-          <TimeCapsuleEntry key={x.id} milestone={x} />
+          <TimelineEntry key={x.id} milestone={x} />
         ))}
     </>
   );
 };
 
-TimeCapsule.propTypes = {
+Timeline.propTypes = {
   milestones: PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.any),
   }),
@@ -65,7 +56,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default TimeCapsule;
+export default Timeline;
 
 //
 // GetMilestones
