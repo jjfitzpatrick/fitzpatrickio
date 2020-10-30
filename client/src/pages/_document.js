@@ -8,7 +8,6 @@ class MyDocument extends Document {
   }
 
   render () {
-    const ackeeOptions = '{ "ignoreLocalhost": true, "detailed": true }';
     return (
       <>
         <Html>
