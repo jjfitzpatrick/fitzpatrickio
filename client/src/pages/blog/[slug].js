@@ -4,22 +4,20 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Heading } from 'grommet';
-import Markdown from 'markdown-to-jsx';
-
 export const Post = ({ title, content, frontmatter }) => {
   return (
     <>
       <Heading>{title}</Heading>
-      <Markdown
-        components={{
-          p: {
-            component: 'Paragraph',
-            props: { maxWidth: 'inherit' }
-          }
-        }}
-      >
+      <Markdown>
         {content}
       </Markdown>
+      {/* <Image
+        src="/static/images/special-github-repository/before.png"
+        alt="Picture of the author"
+        fit="contain"
+        // width=100%
+        // height={500}
+      /> */}
     </>
   );
 };
