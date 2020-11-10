@@ -5,16 +5,23 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Heading } from 'grommet';
 import Markdown from 'markdown-to-jsx';
-
 export const Post = ({ title, content, frontmatter }) => {
   return (
     <>
-      <Heading>{title}</Heading>
+      <Heading level="2">{title}</Heading>
       <Markdown
-        components={{
-          p: {
-            component: 'Paragraph',
-            props: { maxWidth: 'inherit' }
+        options={{
+          overrides: {
+            img: {
+              props: {
+                width: '100%',
+                style: {
+                  border: '4px solid #E7E7E7',
+                  margin: '0 auto',
+                  display: 'block'
+                }
+              }
+            }
           }
         }}
       >
