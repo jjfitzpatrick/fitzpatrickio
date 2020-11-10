@@ -1,6 +1,6 @@
 ---
 title: Special Github Repository
-date: 11-9-2020
+date: 11-7-2020
 summary: Spruce up your GitHub profile to let others know who you are, what you are interested in, and what you are working on in two easy steps! Adding introductory text and HTML to your GitHub profile is as simple as creating a repository and a new README.
 ---
 
