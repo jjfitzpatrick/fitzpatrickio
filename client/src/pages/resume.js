@@ -12,7 +12,7 @@ const Resume = () => {
           Resume - under construction, HTML coming soon! 🤞
         </Text>
         <Button
-          href="files/JohnFitzpatrickResume2020.pdf"
+          href="files/JohnFitzpatrickResume2023.pdf"
           label="Click to open PDF résumé"
           target="_blank"
           icon={<Document />}

@@ -42,7 +42,7 @@ const Navbar = () => {
           <Navlink text="Blog" path="blog" />
           <Navlink text="Timeline" path="timeline" />
           {/* TODO: Remove direct PDF link once resume page complete */}
-          <Navlink text="Résumé" path="files/JohnFitzpatrickResume2020.pdf" target="_blank"/>
+          <Navlink text="Résumé" path="files/JohnFitzpatrickResume2023.pdf" target="_blank"/>
         </Nav>
       </Header>
     </>
